@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Marked in the browser</title>
+    <link rel="stylesheet" href="wiki.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- Devoir de Ming-Xia Delvas 20104038 et Calin Popa 20158726 -->
+    <div id="container" x-data="{markdown: defaultText}">
+        <h1 class="title">Markdown Wiki</h1>
+        <div class="box">
+       
+            <h2>Texte a editer: </h2>
+            <textarea x-model="markdown" cols="75" rows="20"></textarea>
+        </div>
+        <br></br>
+        <h1 class="title">Resultat</h1>
+        <div class="box">     
+            <div class="preview" x-html="marked.parse(markdown)"></div>
+        </div>
+    </div>
+    <script src="wiki.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+
+</html>
